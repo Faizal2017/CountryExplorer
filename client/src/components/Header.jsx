@@ -57,7 +57,7 @@ function Header() {
             className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-amber-100"
             whileHover={{ scale: 1.02 }}
           >
-            Suahina
+            CountryExplorer
           </motion.span>
         </Link>
 
