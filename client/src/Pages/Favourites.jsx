@@ -15,6 +15,11 @@ function Favorites() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+
+  
+  // Fetching the backend URL from environment variables
+  const backUrul = import.meta.env.VITE_AUTH_API_URL
+  
   // Fetch favorite countries
   useEffect(() => {
     const fetchFavorites = async () => {
@@ -25,7 +30,7 @@ function Favorites() {
       }
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:5000/api/favorites", {
+        const response = await axios.get(`${backUrul}/api/favorites`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setFavorites(response.data);

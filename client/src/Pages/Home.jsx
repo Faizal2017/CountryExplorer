@@ -19,13 +19,17 @@ function Home() {
   const { user } = useContext(AuthContext);
   const [favorites, setFavorites] = useState([]);
 
+  
+  // Fetching the backend URL from environment variables
+  const backUrul = import.meta.env.VITE_AUTH_API_URL
+
   // Fetch user favorites if logged in
   useEffect(() => {
     const fetchFavorites = async () => {
       if (user) {
         try {
           const token = localStorage.getItem("token");
-          const response = await axios.get("http://localhost:5000/api/favorites", {
+          const response = await axios.get(`${backUrul}/api/favorites`, {
             headers: { Authorization: `Bearer ${token}` },
           });
           setFavorites(response.data);

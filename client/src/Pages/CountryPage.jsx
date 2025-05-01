@@ -19,6 +19,10 @@ function CountryPage() {
   const [isFavorite, setIsFavorite] = useState(false);
   const [isHeroLoaded, setIsHeroLoaded] = useState(false);
 
+  // Fetching the backend URL from environment variables
+  const backUrul = import.meta.env.VITE_AUTH_API_URL
+
+
   // Fetch country details and favorite status
   useEffect(() => {
     const fetchCountry = async () => {
@@ -28,7 +32,7 @@ function CountryPage() {
         setCountry(data);
         if (user) {
           const token = localStorage.getItem("token");
-          const response = await axios.get("http://localhost:5000/api/favorites", {
+          const response = await axios.get(`${backUrul}/api/favorites`, {
             headers: { Authorization: `Bearer ${token}` },
           });
           setIsFavorite(response.data.includes(code));
