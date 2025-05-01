@@ -11,9 +11,11 @@ const app = express();
 // Middleware to parse JSON and URL-encoded data
 // Middleware to enable CORS
 dotenv.config();
+
+
 app.use(
   cors({
-    origin: "https://country-explorer-pmk7cxrpu-faizal2017s-projects.vercel.app",
+    origin: "https://country-explorer-git-main-faizal2017s-projects.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
