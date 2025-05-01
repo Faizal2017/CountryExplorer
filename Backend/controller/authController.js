@@ -23,6 +23,7 @@ export const register = async (req, res) => {
 // Login function to authenticate user and generate JWT token
 export const login = async (req, res) => {
   const { username, password } = req.body;
+  console.log("Login request received:", username, password); // Debugging line
   try {
     const user = await User.findOne({ username });
     if (!user || !(await bcrypt.compare(password, user.password))) {

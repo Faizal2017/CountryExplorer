@@ -13,6 +13,10 @@ function Register() {
   const [password, setPassword] = useState("");
   const { login } = useContext(AuthContext);
 
+  //
+  const backUrul = import.meta.env.VITE_AUTH_API_URL;
+
+
   const navigate = useNavigate(); // Hook to programmatically navigate
 
   // Function to validate email format
@@ -38,12 +42,12 @@ function Register() {
       return;
     }
     try {
-      await axios.post("http://localhost:5000/api/auth/register", {
+      await axios.post(`${backUrul}/api/auth/register`, {
         username,
         password,
       });
       const loginResponse = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        `${backUrul}/api/auth/login`,
         {
           username,
           password,

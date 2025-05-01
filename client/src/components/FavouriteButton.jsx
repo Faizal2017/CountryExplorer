@@ -9,6 +9,9 @@ function FavoriteButton({ countryCode, isFavorite }) {
   const { user } = useContext(AuthContext);
   const [favorited, setFavorited] = useState(isFavorite);
 
+  // Get the backend URL from environment variables
+  const backUrul = import.meta.env.VITE_AUTH_API_URL;
+
   // Function to toggle favorite status
   const toggleFavorite = async () => {
     if (!user) {
@@ -19,14 +22,14 @@ function FavoriteButton({ countryCode, isFavorite }) {
       const token = localStorage.getItem("token");
       if (favorited) {
         await axios.post(
-          "http://localhost:5000/api/favorites/remove",
+          `${backUrul}/api/favorites/remove`,
           { countryCode },
           { headers: { Authorization: `Bearer ${token}` } }
         );
         toast.success("Removed from favorites");
       } else {
         await axios.post(
-          "http://localhost:5000/api/favorites/add",
+          `${backUrul}/api/favorites/add`,
           { countryCode },
           { headers: { Authorization: `Bearer ${token}` } }
         );

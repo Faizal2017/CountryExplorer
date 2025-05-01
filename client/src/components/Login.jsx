@@ -6,7 +6,7 @@ import { Toaster, toast } from "react-hot-toast"
 import Header from "./Header"
 import { Link, useNavigate } from "react-router-dom"
 import { motion } from "framer-motion"
-
+import { loginUser } from "../utils/api"
 
 // Login component for user authentication
 function Login() {
@@ -15,6 +15,8 @@ function Login() {
   const { login } = useContext(AuthContext)
   const navigate = useNavigate()
 
+
+  const backUrul = import.meta.env.VITE_AUTH_API_URL
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -23,7 +25,8 @@ function Login() {
       return
     }
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/login", {
+      console.log(backUrul);
+      const response = await axios.post(`${backUrul}/api/auth/login`, {
         username,
         password,
       })
