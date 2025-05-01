@@ -64,7 +64,7 @@ function Login() {
               <div className="flex flex-wrap gap-4">
                 <a
                   href="#features"
-                  className="px-6 py-3 bg-purple-600 text-white rounded-lg font-medium shadow-lg hover:bg-purple-700 transition-colors"
+                  className="px-6 py-3 bg-purple-500 text-white rounded-lg font-medium shadow-lg hover:bg-purple-700 "
                 >
                   Explore Features
                 </a>

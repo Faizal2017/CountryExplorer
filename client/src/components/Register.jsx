@@ -55,7 +55,7 @@ function Register() {
       );
       login(loginResponse.data.token);
       toast.success("Registered and logged in successfully!");
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       toast.error(err.response?.data?.error || "Registration failed");
     }
