@@ -2,8 +2,8 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import { MONGOURL, PORT } from "./config.js";
-import User from "./Routes/userRoute.js"
-import Favourte from "./Routes/favouritesRoute.js"
+import User from "./Routes/userRoute.js";
+import Favourte from "./Routes/favouritesRoute.js";
 import dotenv from "dotenv";
 
 const app = express();
@@ -13,8 +13,8 @@ const app = express();
 dotenv.config();
 app.use(
   cors({
-    origin: "https://countryexplorer-tfq0.onrender.com",
-    methods: ["GET", "POST", "PUT", "DELETE","PATCH"],
+    origin: "https://country-explorer-kappa-mocha.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
@@ -23,10 +23,8 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-
 app.use("/api/auth", User); // User authentication routes
 app.use("/api/favorites", Favourte); // Favorite management routes
-
 
 //
 const startServer = async () => {
@@ -34,8 +32,7 @@ const startServer = async () => {
     await mongoose.connect(MONGOURL); // Connect to MongoDB
     console.log("✅ Database Connected Successfully");
 
-    
-    const server = app.listen(PORT, () => { 
+    const server = app.listen(PORT, () => {
       console.log(`🚀 Server is Running on Port ${PORT}`);
     });
   } catch (error) {
