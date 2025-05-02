@@ -48,9 +48,9 @@ function Favorites() {
   }, [user]);
 
   if (loading) return (
-    <div className="spinner">
-      <img src="/spinner.gif" alt="Loading" className="h-16" />
-    </div>
+    <div className="spinner flex justify-center items-center h-full">
+    <div className="loader w-12 h-12 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin"></div>
+  </div>
   );
   if (error) return (
     <p className="text-center text-red-600 bg-red-100 p-4 rounded-2xl">{error}</p>
