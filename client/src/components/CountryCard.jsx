@@ -44,21 +44,21 @@ function CountryCard({ country, isFavorite }) {
         {/* Country Details */}
         <div className="space-y-3 mb-5">
           <div className="flex items-center">
-            <FaMapMarkerAlt className="text-indigo-500 mr-2 flex-shrink-0" />
+            <FaMapMarkerAlt className="text-red-500 mr-2 flex-shrink-0" />
             <p className="text-gray-600">
               <span className="font-medium text-gray-700">Capital:</span> {country.capital?.[0] || "N/A"}
             </p>
           </div>
 
           <div className="flex items-center">
-            <FaGlobeAmericas className="text-indigo-500 mr-2 flex-shrink-0" />
+            <FaGlobeAmericas className="text-blue-500 mr-2 flex-shrink-0" />
             <p className="text-gray-600">
               <span className="font-medium text-gray-700">Region:</span> {country.region}
             </p>
           </div>
 
           <div className="flex items-center">
-            <FaUsers className="text-indigo-500 mr-2 flex-shrink-0" />
+            <FaUsers className="text-green-500 mr-2 flex-shrink-0" />
             <p className="text-gray-600">
               <span className="font-medium text-gray-700">Population:</span> {country.population.toLocaleString()}
             </p>
@@ -69,7 +69,7 @@ function CountryCard({ country, isFavorite }) {
         <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
           <Link 
             to={`/country/${country.cca3}`}
-            className="block w-full py-2.5 px-4 bg-gradient-to-r from-blue-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-medium text-center rounded-lg transition-all duration-300 shadow-sm hover:shadow-md"
+            className="inline-flex items-center mt-5 mb-5 px-6 py-3 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-800 text-white font-medium transition-all duration-300 group shadow-lg hover:shadow-xl"
           >
             Explore Country
           </Link>

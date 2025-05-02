@@ -258,7 +258,7 @@ function CountryPage() {
         >
           <Link 
             to="/" 
-            className="inline-flex items-center mt-5 mb-5 px-6 py-3 rounded-full bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-medium transition-all duration-300 group shadow-lg hover:shadow-xl"
+            className="inline-flex items-center mt-5 mb-5 px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-700 hover:from-indigo-600 hover:to-purple-800 text-white font-medium transition-all duration-300 group shadow-lg hover:shadow-xl"
           >
             <FaArrowLeft className="mr-3 transition-transform group-hover:-translate-x-1" />
             <span>Back to Exploration</span>
