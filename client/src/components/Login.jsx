@@ -25,7 +25,6 @@ function Login() {
     }
     try {
       console.log(backUrul);
-      console.log("fish",backUrul)
       const response = await axios.post(`${backUrul}/api/auth/login`, {
         username,
         password,
@@ -64,7 +63,7 @@ function Login() {
               <div className="flex flex-wrap gap-4">
                 <a
                   href="#features"
-                  className="px-6 py-3 bg-purple-500 text-white rounded-lg font-medium shadow-lg hover:bg-purple-700 "
+                  className="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-800 text-white rounded-lg font-medium shadow-lg  "
                 >
                   Explore Features
                 </a>
@@ -145,7 +144,7 @@ function Login() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full py-4 bg-purple-600 text-white rounded-xl font-medium shadow-lg hover:bg-purple-700 transition-colors"
+                      className="w-full py-4 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-800 text-white rounded-xl font-medium shadow-lg  transition-colors"
                     >
                       Login
                     </button>
