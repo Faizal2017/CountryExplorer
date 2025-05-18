@@ -1,3 +1,3 @@
-export const MONGOURL = "mongodb+srv://Root:root@bookstore.ca33wzl.mongodb.net/CountryExplorer?retryWrites=true&w=majority&appName=BookStore"
+export const MONGOURL = "your mongodb url";
 
 export const PORT =  5000;
